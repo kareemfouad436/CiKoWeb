@@ -1,0 +1,71 @@
+{%  extends 'from/main.html' %}
+
+{% block content %}
+
+
+<br>
+
+<body>
+   <div class="container">
+      <div class="row bg-light p-3 pb-4 border border-light rounded shadow">
+         <!-- Default checked -->
+         <div class="col-md-12 mb-3">
+            <div class="custom-control custom-switch">
+               <input type="checkbox" class="custom-control-input" id="audioUploadSwitch">
+               <label class="custom-control-label font-weight-light" for="audioUploadSwitch">Disable upload and use default audio file</label>
+            </div>
+         </div>
+         <div class="col-md-12">
+            <div class="file-upload-wrapper">
+               <div class="card card-body w-100 view file-upload">
+                  <input type="file" id="audiofile" class="file_upload">
+                  <p class="file-upload-infos-message">Audio upload - Drag and drop or click</p>
+               </div>
+            </div>
+         </div>
+         <div class="mx-auto">
+            <audio id="track" src="" type="audio/mp3"></audio>
+            <div class="player d-none" style="width:300px;">
+               <div class="progress p-1">
+                  <input id="timeslieder" class="timeslieder" type="range" value="0" min="0" max="100" step="0.001" />
+                  <div class="time d-flex justify-content-around" style="width:100%;">
+                     <span id="currentTime" style="width: 30px;">00:00:00</span>
+                     <div id="pause" class="control-icon d-none"><i class="fas fa-pause"></i></div>
+                     <div id="start" class="control-icon"><i class="fas fa-play"></i></div>
+                     <div id="reset" class="control-icon"><i class="fas fa-redo-alt"></i></div>
+                     <span id="duration">00:00:00</span>
+                  </div>
+                  <span><a class="text-decoration-none pt-1 pb-1" href="#" target="_blank">Link</a></span>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+
+{% endblock %}	
+
+
+
+
+
+<br>
+
+<div class="row">
+	<div class="col-md-8">
+		<hr>
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+						<form action="/action_page.php">
+							<label for="song">Select Music:</label>
+							<input type="file" id="song" name="song" accept="audio/*">
+							<input type="submit" value="Upload National Anthem">
+						</form>
+						<th>Update</th>
+				</tr>
+		
+			</table>
+		</div>
+	</div>
+</div>

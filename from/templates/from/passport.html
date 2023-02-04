@@ -1,0 +1,65 @@
+{%  extends 'from/main.html' %}
+
+{% block content %}
+
+<br>
+
+<div class="row">
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+</style>
+</head>
+<body>
+&nbsp;&nbsp; &nbsp; <button class="btn"><i class="fa fa-plus"></i></button> &nbsp;&nbsp;&nbsp; <button class="btn"><i class="fa fa-trash"></i></button>
+</body>
+</html>
+	<div class="col-md-12">
+		<hr>
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+						<th>Surname</th>
+						<th>First Name</th>
+						<th>Passport Number</th>
+						<th>Gender</th>
+						<th>Passport Expiry Date</th>
+						<th>Passport Photo</th>
+						<th>Update</th>
+				</tr>
+		
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock %}	
+
+						<th><form action="/action_page.php">
+							<input type="file" id="img" name="img" accept="image/*">
+							<input type="submit" value="Upload Passport Photo">
+						</form>
+						</th>
+
+						<a class="btn icon-btn btn-default" href="#">
+						<span class="glyphicon btn-glyphicon glyphicon-save img-circle text-muted"></span> <!-- defining icon -->
+						Download Image
+						</a>
+

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta charset="utf-8">
+  <link rel="stylesheet" href="build/css/intlTelInput.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 70%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 6px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: center;
+}
+input[type=email] {
+  width: 70%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+input[type=tel] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+input[type=submit]{
+  background-color: #45a049;
+ 
+  padding: 5px;
+}
+
+.container {
+  border-style: groove;
+  bottom: 0;
+  position: relative;
+  top: 10px;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  padding: 7px;
+  width : 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.container2 {
+  border-style: groove;
+  bottom:0;
+  position: relative;
+  top: 10px;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  padding: 7px;
+  width : 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.button {
+  border: none;
+  color: white;
+  padding: 6px 45px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 1px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+  text-decoration: none;
+}
+
+.button1:hover {
+  background-color: #008CBA;
+  color: white;
+  text-decoration: none;
+}
+
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+
+<style>
+	#hello-msg{
+		font-size: 18px;
+		color: #fff;
+		margin-right: 20px; 
+	
+	}
+</style>
+
+
+</style>
+</head>
+<body>
+  <ul>
+    <li><a class="active" href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">About</a></li>
+	<span class="hello-msg">Hello, {{request.user}}</span>
+	<body>
+    <div class="container">
+      <h2></h2>
+      <p>
+        <a href="{% url 'Logout' %}" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-log-out"></span> Log out
+        </a>
+		<a><span class="hello-msg">Hello, {{request.user}}</span></a>
+      </p>  
+    </div>
+  </body>	
+	<p></p>
+  </ul>
+
+  <div class="w3-bar w3-red">
+    <div class="w3-bar-item">EVENT IS HOSTED IN Egypt, Cairo. PLEASE FILL THE FOLLOWING DETAILS ON TIME.</div>
+    
+  </div>
+<div class="container">
+  <form action="/action_page.php">
+    <h1>Contact Person</h1>
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="fname" name="firstname" value = {{request.user.first_name}} readonly>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="lname">Surname</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="lname" name="lastname" value = {{request.user.last_name}} readonly>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-25">
+        <label for="email">Email:</label>
+      </div>
+      <div class="col-75">
+        <input type="email" id="email" name="email" value = {{request.user.email}} readonly>
+      </div>
+    </div>
+	
+    <div class="row">
+      <div class="col-25">
+        <label for="Phone">Phone</label>
+      </div>
+      <div class="col-75">
+          <input id="phone" name="phone" type="tel" placeholder = {{UserProfile.Phone}}> 
+      </div>
+    </div>
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+    </div>
+    <div class="container2">
+	  <a id="contact" href="{% url 'contact' %}"><input type="button" class="button button1" value="Contact" /></a>
+    </div>
+    
+  </form>
+
+  <script src="build/js/intlTelInput.js"></script>
+    <script>
+    
+    // Vanilla Javascript
+    var input = document.querySelector("#phone");
+    window.intlTelInput(input,({
+      // options here
+    }));
+
+    $(document).ready(function() {
+        $('.iti__flag-container').click(function() { 
+          var countryCode = $('.iti__selected-flag').attr('title');
+          var countryCode = countryCode.replace(/[^0-9]/g,'')
+          $('#phone').val("");
+          $('#phone').val("+"+countryCode+" "+ $('#phone').val());
+       });
+    });
+    
+  </script>
+  </form>
+
+
+  
+
+
+</div>
+
+
+
+
+
+</body>
+</html>

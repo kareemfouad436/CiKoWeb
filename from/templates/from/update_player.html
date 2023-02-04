@@ -1,0 +1,178 @@
+{%  extends 'from/main.html' %}
+{% load static %}
+{% block content %}
+
+<form action="" method="POST">
+{% csrf_token %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Au Register Forms by Colorlib</title>
+
+    <!-- Icons font CSS-->
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="{% static 'add_player/vendor/select2/select2.min.css' %}" rel="stylesheet" media="all">  
+    <link href="{% static 'add_player/vendor/datepicker/daterangepicker.css' %}" rel="stylesheet" media="all"> 
+
+    <!-- Main CSS-->
+    <link href="{% static 'add_player/css/main.css' %}" rel="stylesheet" media="all"> 
+</head>
+<body>
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <h2 class="title">Update Player Data</h2>
+                </div>
+                <div class="card-body">
+                    <form action="" method="POST">
+					{% csrf_token %}
+																				
+                        <div class="form-row m-b-55">
+                            <div class="name">Name</div>
+                            <div class="value">
+                                <div class="row row-space">
+                                    <div class="col-12">
+                                        <div class="input-group-desc">
+                                            <input placeholder = ' ' class="input--style-5" type="text" id = "Name" name = "Name" placeholder = {{form.Name}}
+                                            <label class="label--desc">Full Name</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">Email</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input placeholder = ' ' class="input--style-5" type="email" id = "E_mail" name="E_mail" placeholder = {{form.E_mail}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row m-b-55">
+                            <div class="name">Phone</div>
+                            <div class="value">
+                                <div class="row row-refine">
+                                    <div class="col-3">
+                                        <div class="input-group-desc">
+                                            <input placeholder = ' ' class="input--style-5" type="tel" id = "Area_code" name="Area_code" placeholder = {{form.Area_code}}
+                                            <label class="label--desc">Area Code</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="input-group-desc">
+                                            <input placeholder = ' ' class="input--style-5" input type=text onkeypress="return /^-?[0-9]*$/.test(this.value+event.key)"  id = "Phone_Number" name="Phone_Number" placeholder = {{form.Phone_Number}}
+                                            <label class="label--desc">Phone Number</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						
+                        <div class="form-row m-b-55">
+                            <div class="name">Address</div>
+                            <div class="value">
+                                <div class="row row-refine">
+                                    <div class="col-4">
+                                        <div class="input-group-desc">
+                                            <input placeholder = ' ' class="input--style-5" type="text" id = "Country" name="Country" placeholder = {{form.Country}}
+                                            <label class="label--desc">Country</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="input-group-desc">
+                                            <input placeholder = ' ' class="input--style-5" type="text" id = "City" name="City" placeholder = {{form.City}}
+                                            <label class="label--desc">City</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="input-group-desc">
+                                            <input placeholder = ' ' class="input--style-5" type="text" id = "State" name="State" placeholder = {{form.State}}
+                                            <label class="label--desc">State</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						
+                        <div class="form-row m-b-55">
+                            <div class="name">Zip Code</div>
+                            <div class="value">
+                                <div class="row row-space">
+                                    <div class="col-4">
+                                        <div class="input-group-desc">
+                                            <input placeholder = ' ' class="input--style-5" input type=text onkeypress="return /^-?[0-9]*$/.test(this.value+event.key)" id = "Zip_Code" name="Zip_Code" placeholder = {{form.Zip_Code}}
+                                            <label class="label--desc">Zip Code</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						
+                        <div class="form-row">
+                            <div class="name">Full Address</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input placeholder = ' ' class="input--style-5" type="text" id = "Address" name="Address" placeholder = {{form.Address}}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">FIG License Number</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input placeholder = ' ' class="input--style-5" input type=text onkeypress="return /^-?[0-9]*$/.test(this.value+event.key)" id = "FIG_License_Number" name="FIG_License_Number" placeholder = {{form.FIG_License_Number}}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name">Passport Number</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input placeholder = ' ' class="input--style-5" input type=text onkeypress="return /^-?[0-9]*$/.test(this.value+event.key)" id = "Passport_Number" name="Passport_Number" placeholder = {{form.Passport_Number}}
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+					
+                            <button class="btn btn--radius-2 btn--red" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="{% static 'add_player/vendor/jquery/jquery.min.js' %}"></script> 
+    <!-- Vendor JS-->
+    <script src="{% static 'add_player/vendor/select2/select2.min.js' %}"></script> 
+    <script src="{% static 'add_player/vendor/datepicker/moment.min.js' %}"></script> 
+    <script src="{% static 'add_player/vendor/datepicker/daterangepicker.js' %}"></script> 
+
+    <!-- Main JS-->
+    <script src="{% static 'add_player/js/global.js' %}"></script> 
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+</form>
+<!-- end document-->
+{% endblock %}

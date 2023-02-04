@@ -1,0 +1,101 @@
+{%  extends 'from/main.html' %}
+
+{% block content %}
+
+<br>
+
+<div class="row">
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+</style>
+</head>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <title>Delete Modal In Bootstrap 4</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+<body>
+<tr>
+&nbsp;&nbsp; &nbsp; <a class="btn" href="{% url 'add_player' %}">
+<span class="fa fa-plus"></span>
+Add New Player
+</a>
+
+</tr>
+</body>
+</html>
+	<div class="col-md-12">
+		<hr>
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+						<th>Name</th>
+						<th>&nbsp;&nbsp; &nbsp;&nbsp; E-mail</th>
+						<th>Passport Number</th>
+						<th>Phone Number</th>
+						<th>Country</th>
+						<th>City</th>
+						<th>State</th>
+						<th>Zip Code</th>
+						<th>Address</th>
+						<th></th>
+						<th>FIG License Number</th>
+						<th>&nbsp;&nbsp; Update</th>
+						<th>&nbsp;&nbsp; Remove</th>
+				</tr>
+
+					{%for i in contacts %}
+						<tr>
+						<td>{{i.Name}}</td>
+						<td>{{i.E_mail}}</td>
+						<td>{{i.Passport_Number}}</td>
+						<td>{{i.Phone_Number}}</td>
+						<td>{{i.Country}}</td>
+						<td>{{i.City}}</td>
+						<td>{{i.State}}</td>
+						<td>{{i.Zip_Code}}</td>
+						<td>{{i.Address}}</td>
+						<td>{{i.}}</td>
+						<td>{{i.FIG_License_Number}}</td>
+						<td><a class= "btn btn-sm btn-info" href="{% url 'update_player' i.id %}">Update</a></td>
+						<td><a class= "btn btn-sm btn-danger" href="{% url 'delete_player' i.id %}">Remove</a></td>
+						</tr>
+					{%endfor%}
+		
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock %}	
+
+&nbsp;&nbsp; &nbsp; <button class="btn" href="{% url 'add_player' %}"><i class="fa fa-plus" href="{% url 'add_player' %}"></i></button> &nbsp;&nbsp;&nbsp; <button class="btn"><i class="fa fa-trash"></i></button>
+

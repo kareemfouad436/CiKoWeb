@@ -1,0 +1,108 @@
+{%  extends 'from/main.html' %}
+
+{% block content %}
+
+
+<br>
+<div>
+<div class="row">
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+</style>
+</head>
+	<div class="col-md-8">
+		<h5> Info </h5>
+		<hr>
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>Full Name</th>
+					<th>Username</th>
+					<th>Email</th>
+					<th>Phone</th>
+					<th>Passport Number</th>
+				</tr>
+					{% spaceless %}
+					{% for i in users %}
+						<tr>
+						<td>{{i.Full_Name}}</td>
+						<td>{{i.User_Name}}</td>
+						<td>{{i.Email}}</td>
+						<td>{{i.Phone}}</td>
+						<td>{{i.Passport_Number}}</td>
+						</tr>
+					{%endfor%}
+					{% endspaceless %}
+					<br>
+			</table>
+		</div>
+	</div>
+</div>	
+<br>	
+<a class="btn icon-btn btn-success" href="{% url 'add_player' %}">
+<span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>
+Add Player Contact
+</a>
+
+<a class="btn icon-btn btn-success" href="{% url 'add_music' %}">
+<span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>
+Add Music
+</a>
+
+<a class="btn icon-btn btn-success" href="{% url 'add_pass' %}">
+<span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>
+Add Passport Information
+</a>
+
+<a class="btn icon-btn btn-success" href="{% url 'add_travel' %}">
+<span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>
+Add Travel Details
+</a>
+
+<a class="btn icon-btn btn-success" href="{% url 'add_anthem' %}">
+<span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>
+Add National Anthem
+</a>
+
+{% endblock %}
+			<a class="btn btn-primary  btn-sm btn-block" href="{% url 'create_update' %}">Add New Player</a>
+			
+
+
+<br>
+	<div class="col-md-7">
+	<br>
+		<h5>Last 5 Players</h5>
+		<hr>
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+						<th>Name</th>
+						<th>Added Date</th>
+						<th>Passport Number</th>
+						<th>Update</th>
+						<th>Remove</th>
+				</tr>
+		
+			</table>
+		</div>
+	</div>
+
